@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Client</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/vue.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/main.js"></script>
+
+</head>
+
+<body>
+
+    <div id="sheet" class="animated"></div>
+    <div id="pop-up-prompt" class="animated">
+        <header>
+            <h3 class="color-badge"></h3>
+        </header>
+        <div>
+            <p></p>
+            <section>
+                <span id="cancel-btn" class="btn"></span>
+                <span id="confirm-btn" class="btn"></span>
+            </section>
+        </div>
+    </div>
+
+
+    <div class="side-nav">
+        <div class="user-section">
+            <a href="profile.html"><img class="circle" src="img/avengers.jpg">
+                <p>Milan Nagariya</p>
+            </a>
+        </div>
+
+        <form method="GET" action="index.html/fa-search" accept-charset="UTF-8">
+            <div class="form-group search">
+                <input class="form-control search-bar" placeholder="Search" name="q" type="text">
+            </div>
+        </form>
+
+        <div class="menu">
+            <a class="false false" href="index.html"><i class="icon ion-ios-home"></i> Dashboard</a>
+            <a class="active" href="clients.html"><i class="icon ion-person"></i> Clients</a>
+            <a class="false" href="profile.html"><i class="icon ion-gear-b"></i> Settings</a>
+            <a href="index.html/log-out"><i class="icon ion-android-exit"></i> Logout</a>
+        </div>
+
+        <div class="line">
+            <hr>
+        </div>
+
+
+        <div class="footer">
+            <p>COPYRIGHT 2020 &copy; SEN_GRP-2
+        </div>
+
+        <script src="js/main.js"></script>
+    </div>
+
+    <div class="content-area">
+
+        <div id="client">
+            <div class="row">
+                <div class="col-xs-12 page-title-section">
+                    <h1 class="pull-left">Clients</h1>
+                    <a v-on:click="showCreateForm()" class="btn btn-primary pull-right" title="Create new client">+ New Client</a>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+
+            <template v-if="clients.length != 0">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="mega-menu">
+                    <div class="links">
+                        <a v-for="client in clients" data-id="client_{{client.id}}" href="">
+                            {{client.name}}
+                        </a>
+                    </div>
+                    <div class="content">
+                        <div v-for="client in clients" class="item" id="client_{{client.id}}" title="Edit client">
+                            <header>
+                                <div class="client client-info-{{$index}} page-title-section">
+                                    <h2 class="pull-left">{{client.name}} <a v-on:click="startClientEditMode($index)" class="show-on-hover btn btn-default" title="Edit Client"><i class="ion-edit"></i></a></h2>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div>
+                                    <p><label>Contact name: </label> {{client.point_of_contact}}</p>
+                                    <p><label>Contact number: </label> {{client.phone_number}}</p>
+                                    <p><label>Contact email: </label> <a href="mailto:{{client.email}}">{{client.email}}</a></p>
+                                </div>
+                            </header>
+                            <hr>
+                            <span v-on:click="showNewProjectForm(client.id, $index)" title="Create new project" class="btn btn-default pull-right">New Project</span>
+                            <template v-if="client.projects.length > 0">
+                                <h4>Projects</h4>
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <td>#</td>
+                                        <td>Name</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr v-for="project in client.projects">
+                                        <td>{{ $index + 1 }}</td>
+                                        <td><a href="http://ribbbon.com/projects/{{ project.id }}">{{ project.name }}</a></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </template>
+            <br>
+            <div class="clearfix"></div>
+            <hr><br><br>
+            <span v-on:click="deleteClient(client, $index)" class="btn btn-danger pull-right">Delete {{ client.name }}</span>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    </div>
+
+    </div>
+    </div>
+    </template>
+
+    <template v-if="clients.length == 0">
+        <div class="clearfix"></div>
+        <p class="alert alert-warning">
+            Your clients will be listed here once you create some.
+            Create a new client <a v-on:click="showCreateForm()">now</a>.
+        </p>
+    </template>
+
+    <div class="popup-form new-client">
+        <header>
+            <p class="pull-left">New Client</p>
+            <div class="actions pull-right">
+                <i title="Minimze " class="ion-minus-round"></i>
+                <i title="Close" class="ion-close-round"></i>
+            </div>
+            <div class="clearfix"></div>
+        </header>
+        <section>
+            <form>
+                <span v-if="msg.success != null" class="status-msg success-msg">{{ msg.success }}</span>
+                <span v-if="msg.error != null" class="status-msg error-msg">{{ msg.error }}</span>
+                <input v-model="client.name" placeholder="Client Name" type="text" class="form-control first">
+                <input v-model="client.email" placeholder="Email" type="text" class="form-control">
+                <input v-model="client.point_of_contact" placeholder="Point Of Contact" type="text" class="form-control">
+                <input v-model="client.phone_number" placeholder="Contact Number" type="text" class="form-control">
+            </form>
+        </section>
+        <footer>
+            <a v-on:click="create(client,true)" class="btn btn-primary pull-right">Save</a>
+            <div class="clearfix"></div>
+        </footer>
+    </div>
+    <div class="popup-form new-project">
+        <header>
+            <p class="pull-left">New Project</p>
+            <div class="actions pull-right">
+                <i title="Minimze " class="ion-minus-round"></i>
+                <i title="Close" class="ion-close-round"></i>
+            </div>
+            <div class="clearfix"></div>
+        </header>
+        <section>
+            <form>
+                <span v-if="msg.success != null" class="status-msg success-msg">{{ msg.success }}</span>
+                <span v-if="msg.error != null" class="status-msg error-msg">{{ msg.error }}</span>
+                <input v-model="newProject.name" placeholder="Name" type="text" class="form-control first">
+            </form>
+        </section>
+        <footer>
+            <a v-on:click="createProject(true)" class="btn btn-primary pull-right">Save</a>
+            <div class="clearfix"></div>
+        </footer>
+    </div>
+    <div style="z-index: 20" class="popup-form update-client">
+        <header>
+            <p class="pull-left">Update Client</p>
+            <div class="actions pull-right">
+                <i title="Minimze " class="ion-minus-round"></i>
+                <i title="Close" class="ion-close-round"></i>
+            </div>
+            <div class="clearfix"></div>
+        </header>
+        <section>
+            <form>
+                <span v-if="msg.success != null" class="status-msg success-msg">{{ msg.success }}</span>
+                <span v-if="msg.error != null" class="status-msg error-msg">{{ msg.error }}</span>
+                <span class="status-msg"></span>
+                <input v-model="currentClient.name" placeholder="Client Name" type="text" class="form-control first">
+                <input v-model="currentClient.email" placeholder="Email" type="text" class="form-control">
+                <input v-model="currentClient.point_of_contact" placeholder="Point Of Contact" type="text" class="form-control">
+                <input v-model="currentClient.phone_number" placeholder="Contact Number" type="text" class="form-control">
+            </form>
+        </section>
+        <footer>
+            <a v-on:click="updateClient()" class="btn btn-primary pull-right">Update</a>
+            <div class="clearfix"></div>
+        </footer>
+    </div>
+    </div>
+
+
+    <script src="js/controllers/client.js"></script>
+    </div>

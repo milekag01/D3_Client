@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/vue.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/main.js"></script>
+
+</head>
+
+<body>
+  
+    <div id="sheet" class="animated"></div>
+    <div id="pop-up-prompt" class="animated">
+        <header>
+            <h3 class="color-badge"></h3>
+        </header>
+        <div>
+            <p></p>
+            <section>
+                <span id="cancel-btn" class="btn"></span>
+                <span id="confirm-btn" class="btn"></span>
+            </section>
+        </div>
+    </div>
+
+
+    <style>
+        body {
+            background: url("img/workflow-background.jpg") no-repeat;
+            background-size: cover;
+        }
+    </style>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+
+                <div class="special-form">
+                    <a href="index.html"><img src="img/avengers.jpg" alt=""></a>
+                    <h3 class="text-center">LOGIN</h3>
+                    <hr>
+                    <form method="POST" action="localhost:3000/login" accept-charset="UTF-8"><input name="_token" type="hidden" value="dIuSonjX5SsfyfaRWIV1UF0s42jZ4O1ziY1D5BVJ">
+                        <div class="form-group">
+                            <label for="email" class="color-primary">Email:</label>
+                            <input class="form-control" placeholder="Email" autofocus="true" name="email" type="text">
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="color-primary">Password:</label>
+                            <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                        </div>
+                        <div class="form-group">
+                            <input class="btn btn-primary btn-wide" type="submit" value="Login">
+                        </div>
+                    </form>
+                    <p>Visiting First Time? <a href="register.html">Click here to register</a></p>
+                </div>
+
+            </div>
+        </div>
+    </div>
