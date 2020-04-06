@@ -2,10 +2,23 @@
 <html>
 
 <head>
-    <title>Dashboard</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+        <!-- font awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <script src="js/jquery.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <title>Dashboard</title>
+    <style>
+
+    </style>
+     <link rel="stylesheet" href="css.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/ionicons.min.css">
     <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
@@ -20,6 +33,7 @@
     <script src="js/main.js"></script>
 
 </head>
+
 
 <body>
 
@@ -38,7 +52,7 @@
     </div>
 
 
-    <div class="side-nav">
+    <div class="side-nav ">
         <div class="user-section">
             <a href="profile.html"><img class="circle" src="img/avengers.jpg">
                 <p>Milan Nagariya</p>
@@ -46,17 +60,18 @@
         </div>
 
         <form method="GET" action="index.html/fa-search" accept-charset="UTF-8">
-            <div class="form-group search">
-                <input class="form-control search-bar" placeholder="Search" name="q" type="text">
+            <div class="form-group search overflows ">
+                <input class="form-control search-bar heights" placeholder="Search" name="q" type="text">
             </div>
         </form>
 
         <div class="menu">
-            <a class="false active" href="dashboard.html"><i class="icon ion-ios-home"></i> Dashboard</a>
-            <a class="false" href="client.html"><i class="icon ion-person"></i> Clients</a>
-            <a class="false" href="profile.html"><i class="icon ion-gear-b"></i> Settings</a>
-            <a href="index.html/log-out"><i class="icon ion-android-exit"></i> Logout</a>
-        </div>
+            <a class="false active zeus" href="dashboard.html"><i class="material-icons">dashboard</i> Dashboard</a>
+            <a class="false zeus" href="client.html"><i class="material-icons">person</i> Clients</a>
+            <a class="false zeus" href="profile.html"><i class="material-icons">settings</i> Settings</a>
+            <a class="false zeus"href="home.html" class="zeus"><i class=" material-icons ">home</i> Home</a>
+            <a class="false"><i class="material-icons ">logout</i> Logout</a>
+         </div>
 
         <div class="line">
             <hr>
