@@ -1,0 +1,10 @@
+.overflows{
+    overflow: hidden;
+}
+.zeus{
+    padding-top: 16px;
+    margin-top: 2px;
+}
+.heights{
+    max-height: 35px;
+}

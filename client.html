@@ -5,13 +5,17 @@
     <title>Client</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-     <!-- Compiled and minified CSS -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-     <!-- Compiled and minified JavaScript -->
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+          <!-- font awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <script src="js/jquery.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
              
-
+    <link rel="stylesheet" href="css.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/ionicons.min.css">
     <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
@@ -24,6 +28,9 @@
     <script src="js/vue.js"></script>
     <script src="js/ui.js"></script>
     <script src="js/main.js"></script>
+    <style>
+    
+    </style>
 
 </head>
 
@@ -52,17 +59,19 @@
         </div>
 
         <form method="GET" action="index.html/fa-search" accept-charset="UTF-8">
-            <div class="form-group search">
-                <input class="form-control search-bar" placeholder="Search" name="q" type="text">
+            <div class="form-group search overflows">
+                <input class="form-control search-bar heights" placeholder="Search" name="q" type="text">
             </div>
         </form>
 
         <div class="menu">
-            <a class="false false" href="dashboard.html"><i class="icon ion-ios-home"></i> Dashboard</a>
-            <a class="active" href="client.html"><i class="icon ion-person"></i> Clients</a>
-            <a class="false" href="profile.html"><i class="icon ion-gear-b material-icons"></i> Settings</a>
-            <a href="index.html/log-out"><i class="icon ion-android-exit"></i> Logout</a>
-        </div>
+            <a class="false false zeus" href="dashboard.html"><i class="material-icons">dashboard</i> Dashboard</a>
+            <a class="active zeus" href="client.html"><i class="material-icons">person</i> Clients</a>
+            <a class="false zeus" href="profile.html"><i class="material-icons">settings</i> Settings</a>
+            <a class="false zeus"href="home.html" class="zeus"><i class=" material-icons ">home</i> Home</a>
+            <a href="#" class="false"><i class="material-icons ">logout</i> Logout</a>
+         </div>
+
 
         <div class="line">
             <hr>
@@ -153,8 +162,8 @@
         <header>
             <p class="pull-left">New Client</p>
             <div class="actions pull-right">
-                <i title="Minimze " class="ion-minus-round"></i>
-                <i title="Close" class="ion-close-round"></i>
+                <i title="Minimze " class="material-icons ">minimize</i>
+                <i title="Close" class="material-icons">close</i>
             </div>
             <div class="clearfix"></div>
         </header>
