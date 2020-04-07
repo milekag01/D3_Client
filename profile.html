@@ -5,16 +5,16 @@
     <title>Profile</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-     <!-- font awesome -->
-     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-     <!--Import Google Icon Font-->
-     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-     <!-- Compiled and minified CSS -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-       <script src="js/jquery.js"></script>
-       <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-     <link rel="stylesheet" href="css.css">          
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <script src="js/jquery.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="css.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/ionicons.min.css">
     <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
@@ -24,48 +24,34 @@
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/jquery.js"></script>
-    <script src="js/vue.js"></script>
-    <script src="js/ui.js"></script>
-    <script src="js/main.js"></script>
+
 
 </head>
 
 <body>
-    <div id="sheet" class="animated"></div>
-    <div id="pop-up-prompt" class="animated">
-        <header>
-            <h3 class="color-badge"></h3>
-        </header>
-        <div>
-            <p></p>
-            <section>
-                <span id="cancel-btn" class="btn"></span>
-                <span id="confirm-btn" class="btn"></span>
-            </section>
-        </div>
-    </div>
+
 
 
     <div class="side-nav">
         <div class="user-section">
-            <a href="index.html"><img class="circle" src="img/avengers.jpg">
-                <p>Milan Nagariya</p>
+            <a href="index.html"><img class="circle" src="img/boss.JPG">
+                <p>Harsh Jain</p>
             </a>
         </div>
 
-        <form method="GET" action="index.html/fa-search" accept-charset="UTF-8">
+        <form >
             <div class="form-group search overflows">
-                <input class="form-control search-bar heights" placeholder="Search" name="q" type="text">
+                <input class="heights" placeholder="Search"  type="text">
             </div>
         </form>
 
         <div class="menu">
-            <a class="false false zeus" href="dashboard.html"><i class="material-icons">dashboard</i> Dashboard</a>
+            <a class=" false zeus" href="dashboard.html"><i class="material-icons">dashboard</i> Dashboard</a>
             <a class="false zeus" href="client.html"><i class="material-icons">person</i> Clients</a>
             <a class="active zeus" href="profile.html"><i class="material-icons">settings</i> Settings</a>
-            <a class="false zeus"href="home.html" class="zeus"><i class=" material-icons ">home</i> Home</a>
+            <a class="false zeus" href="home.html" class="zeus"><i class=" material-icons ">home</i> Home</a>
             <a href="#" class="false"><i class="material-icons ">logout</i> Logout</a>
-         </div>
+        </div>
 
 
         <div class="line">
@@ -77,15 +63,18 @@
             <p>COPYRIGHT 2020 &copy; SEN_GRP-2</p>
         </div>
 
-        <script src="js/main.js"></script>
+     
     </div>
+
+
+
+
 
     <div class="content-area">
         <div id="user">
             <div class="row">
                 <div class="col-xs-12 page-title-section">
                     <h1 class="pull-left">Settings</h1>
-                    <a v-on:click="update()" class="btn btn-primary pull-right" title="save current changes">Save Changes</a>
                     <div class="clearfix"></div>
                 </div>
             </div>
@@ -96,47 +85,50 @@
                         <div class="col-xs-12 col-md-4 left-side">
                             <a href="profile.html"><img class="circle" src="img/avengers.html"></a>
                             <div class="info">
-                                <p class="name">{{ user.full_name }}</p>
-                                <p class="color-primary">{{ user.email }}</p>
-                                <p class="color-primary">{{ user.title }}</p>
+                                <p class="name">Milan Nagariya</p>
+                                <p class="color-primary"></p>
+                                <p class="color-primary">User Title</Title>
+                                </p>
                             </div>
                             <div class="clearfix"></div>
                             <br>
                             <div class="links">
-                                <p v-if="user.link">
+                                <p>
                                     <a target="_blank" href="">
-                                        <span class="ion-ios-world-outline"></span> {{ user.link }}
+                                        <span class="ion-ios-world-outline"></span> User link
                                     </a>
                                 </p>
-                                <p v-if="user.twitter">
-                                    <a target="_blank" href="https://twitter.com/{{ user.twitter }}">
-                                        <span class="ion-social-twitter"></span> https://twitter.com/{{ user.twitter }}
+                                <p>
+                                    <a target="_blank" href="https://twitter.com">
+                                        <span class="ion-social-twitter"></span> Twitter Link
                                     </a>
                                 </p>
-                                <p v-if="user.facebook">
-                                    <a target="_blank" href="https://www.facebook.com/people/{{ user.facebook }}">
-                                        <span class="ion-social-facebook"></span> https://www.facebook.com/people/{{ user.facebook}}
+                                <p>
+                                    <a target="_blank" href="https://www.facebook.com">
+                                        <span class="ion-social-facebook"></span> Facebook Link
                                     </a>
                                 </p>
-                                <p v-if="user.linkedin">
-                                    <a target="_blank" href="https://www.linkedin.com/in/{{ user.linkedin }}">
-                                        <span class="ion-social-linkedin"></span> https://www.linkedin.com/in/{{ user.linkedin }}
+                                <p>
+                                    <a target="_blank" href="https://www.linkedin.com">
+                                        <span class="ion-social-linkedin"></span> LinkedIn Link
                                     </a>
                                 </p>
                             </div>
                             <hr>
 
                             <div class="bio">
-                                <p>BIO
-                                    <p>
-                                        <p>{{ user.bio }} </p>
+                                <p>A short bio of the user.</p>
+                                <p style="text-align: left">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel esse ut natus nemo, laudantium temporibus amet excepturi voluptas accusantium architecto consequatur tenetur tempore voluptates maiores repudiandae assumenda
+                                    sequi? Reiciendis, harum!</p>
                             </div>
+
+                            <a title="save current changes">Save Changes</a>
+
 
                         </div>
                         <div class="col-xs-12 col-md-8 right-side">
                             <div class="mega-menu">
-                                <p v-if="msg.error != null" class="status-msg error-msg">{{ msg.error }}</p>
-                                <p v-if="msg.success != null" class="status-msg success-msg">{{ msg.success }}</p>
+
                                 <div class="links">
                                     <a class="" data-id="settings_info" href="">Personal Info</a>
                                     <a class="" data-id="settings_links" href="">Links</a>
@@ -148,66 +140,23 @@
                                             <form>
                                                 <div class="form-group">
                                                     <label>Full Name</label>
-                                                    <input v-model="user.full_name" type="text" class="form-control" placeholder="Full Name">
+                                                    <input type="text" class="form-control" placeholder="Full Name">
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Email</label>
-                                                    <input v-model="user.email" type="text" class="form-control" placeholder="Email">
+                                                    <input type="text" class="form-control" placeholder="Email">
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Title</label>
-                                                    <input v-model="user.title" type="title" class="form-control" placeholder="Title">
+                                                    <input type="title" class="form-control" placeholder="Title">
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Bio</label>
-                                                    <textarea v-model="user.bio" class="form-control" rows="7" placeholder="A little about me.."></textarea>
+                                                    <textarea class="form-control" rows="7" placeholder="A little about me.."></textarea>
                                                     <br>
-                                                    <span class="count pull-right">{{ 250 - user.bio.length }}</span>
+                                                    <span class="count pull-right"></span>
                                                 </div>
                                             </form>
-                                        </div>
-                                    </div>
-                                    <div class="item" id="settings_links">
-                                        <div class="input-group">
-                                            <span class="input-group-addon">Link</span>
-                                            <input v-model="user.link" type="text" class="form-control" placeholder="http://www.Yourwebsite.com/">
-                                        </div><br>
-                                        <div class="input-group">
-                                            <span class="input-group-addon">https://twitter.com/</span>
-                                            <input v-model="user.twitter" type="text" class="form-control" placeholder="username">
-                                        </div><br>
-                                        <div class="input-group">
-                                            <span class="input-group-addon">https://facebook.com/</span>
-                                            <input v-model="user.facebook" type="text" class="form-control" placeholder="username">
-                                        </div><br>
-                                        <div class="input-group">
-                                            <span class="input-group-addon">https://Linkedin.com/</span>
-                                            <input v-model="user.linkedin" type="text" class="form-control" placeholder="username">
-                                        </div>
-                                    </div>
-                                    <div class="item" id="settings">
-                                        <label>Current Password</label>
-                                        <form method="POST" action="http://localhost:3000/resetPassword/5056" accept-charset="UTF-8"><input name="_token" type="hidden" value="0ULMkq1oHayjhKRtmVDLLDr271yjrHByQFj0tVWP">
-                                            <div class="form-group">
-                                                <input class="form-control" placeholder="Current Password" name="current_pwd" type="password" value="">
-                                            </div>
-                                            <label>New Password</label>
-                                            <div class="form-group">
-                                                <input class="form-control" placeholder="New Password" name="new_pwd" type="password" value="">
-                                            </div>
-                                            <div class="form-group">
-                                                <input class="btn btn-default pull-right" type="submit" value="Update Password">
-                                                <div class="clearfix"></div>
-                                            </div>
-                                        </form>
-                                        <hr>
-                                        <label>Delete account</label>
-                                        <p>Enable the delete button by typing delete below</p>
-                                        <p class="dim">Deleting your account will delete <b>ALL</b>, clients, projects and tasks created under this account</p>
-                                        <input v-model="delete_text" type="text" class="form-control">
-                                        <br>
-                                        <div v-if="delete_text == 'delete' ">
-                                            <button v-on:click="delete()" id="delete-account" class="btn btn-danger">Delete my account</button>
                                         </div>
                                     </div>
                                 </div>
@@ -217,9 +166,6 @@
                 </div>
             </div>
         </div>
-
-        <script>
-            megaMenuInit();
-        </script>
-        <script src="http://localhost:3000/assets/js/controllers/user.js"></script>
     </div>
+</body>
+</html>
